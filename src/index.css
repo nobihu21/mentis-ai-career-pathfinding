@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  color: #ffffff;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-shell {
+  background:
+    radial-gradient(circle at 15% -10%, rgba(59, 130, 246, 0.2), transparent 35%),
+    radial-gradient(circle at 95% 15%, rgba(96, 165, 250, 0.2), transparent 40%),
+    #0f172a;
+}
+
+body.mode-dimensional .rounded-2xl,
+body.mode-dimensional .rounded-xl {
+  transform: perspective(1000px) rotateX(1deg);
+  transition: transform 180ms ease;
+}
+
+body.mode-dimensional .rounded-2xl:hover,
+body.mode-dimensional .rounded-xl:hover {
+  transform: perspective(1000px) rotateX(2deg) translateY(-2px);
+}
+
+body.mode-immersive .rounded-2xl,
+body.mode-immersive .rounded-xl {
+  transform: perspective(1200px) rotateX(3deg) rotateY(-1deg);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  box-shadow: 0 20px 45px -20px rgba(59, 130, 246, 0.5);
+}
+
+body.mode-immersive .rounded-2xl:hover,
+body.mode-immersive .rounded-xl:hover {
+  transform: perspective(1200px) rotateX(4deg) rotateY(-2deg) translateY(-3px);
+}
