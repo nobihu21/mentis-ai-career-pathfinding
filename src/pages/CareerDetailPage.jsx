@@ -104,11 +104,11 @@ export default function CareerDetailPage() {
             <div className="mt-4 space-y-3 text-sm">
               <div className="rounded-lg border border-green-500/20 bg-green-500/10 p-3">
                 <p className="text-green-400 font-semibold">Strengths</p>
-                <p className="mt-1 text-white">{career.strengthsAlignment}</p>
+                <p className="mt-1 text-mentisText">{career.strengthsAlignment}</p>
               </div>
               <div className="rounded-lg border border-amber-500/20 bg-amber-500/10 p-3">
                 <p className="text-amber-400 font-semibold">Gaps to Bridge</p>
-                <p className="mt-1 text-white">{career.weaknessGaps}</p>
+                <p className="mt-1 text-mentisText">{career.weaknessGaps}</p>
               </div>
             </div>
           </section>

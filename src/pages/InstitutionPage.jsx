@@ -14,7 +14,7 @@ export default function InstitutionPage() {
             {institutionAnalytics.cohortReadiness.map((row) => (
               <div key={row.segment} className="rounded-lg bg-mentisBg/70 p-3">
                 <p className="text-sm text-mentisTextSecondary">{row.segment}</p>
-                <p className="mt-1 text-xl font-semibold text-white">{row.value}%</p>
+                <p className="mt-1 text-xl font-semibold text-mentisText">{row.value}%</p>
               </div>
             ))}
           </div>
@@ -24,7 +24,7 @@ export default function InstitutionPage() {
           <div className="mt-4 space-y-3">
             {institutionAnalytics.skillGapHeatmap.map((row) => (
               <div key={row.skill} className="flex items-center justify-between rounded-lg bg-mentisBg/70 p-3 text-sm">
-                <span className="text-white">{row.skill}</span>
+                <span className="text-mentisText">{row.skill}</span>
                 <span className={`font-semibold ${row.gapLevel === "High" ? "text-amber-300" : "text-mentisSecondary"}`}>{row.gapLevel}</span>
               </div>
             ))}
@@ -35,7 +35,7 @@ export default function InstitutionPage() {
           <div className="mt-4 space-y-3">
             {institutionAnalytics.interventions.map((row) => (
               <div key={row.name} className="rounded-lg bg-mentisBg/70 p-3">
-                <p className="text-sm text-white">{row.name}</p>
+                <p className="text-sm text-mentisText">{row.name}</p>
                 <p className="mt-1 text-sm text-mentisTextSecondary">{row.effectiveness}</p>
               </div>
             ))}

@@ -119,9 +119,9 @@ export default function LandingPage() {
             <span className="text-lg font-semibold text-mentisTextPrimary">MENTIS</span>
           </div>
           <nav className="hidden items-center gap-6 text-sm text-mentisTextSecondary md:flex">
-            <a href="#features" className="hover:text-white">Features</a>
-            <a href="#workflow" className="hover:text-white">How It Works</a>
-            <a href="#assistant" className="hover:text-white">AI Assistant</a>
+            <a href="#features" className="hover:text-mentisText">Features</a>
+            <a href="#workflow" className="hover:text-mentisText">How It Works</a>
+            <a href="#assistant" className="hover:text-mentisText">AI Assistant</a>
           </nav>
           <div className="flex items-center gap-3">
             <VisualModeToggle />
@@ -180,7 +180,7 @@ export default function LandingPage() {
             <SectionTitle label="Audience System" title="Multi-Audience View Toggle" subtitle="Student, Parent, and Counselor views adapt insight tone and complexity." />
             <div className="mt-8 flex flex-wrap gap-3">
               {Object.entries(audienceViews).map(([key, value]) => (
-                <button key={key} onClick={() => setAudience(key)} className={`rounded-lg px-4 py-2 text-sm transition ${audience === key ? "bg-mentisPrimary text-white" : "border border-slate-700 bg-mentisBg/60 text-mentisTextSecondary hover:text-white"}`}>
+                <button key={key} onClick={() => setAudience(key)} className={`rounded-lg px-4 py-2 text-sm transition ${audience === key ? "bg-mentisPrimary text-white" : "border border-slate-700 bg-mentisBg/60 text-mentisTextSecondary hover:text-mentisText"}`}>
                   {value.label}
                 </button>
               ))}
@@ -233,7 +233,7 @@ export default function LandingPage() {
               <article key={career.id} className="rounded-2xl border border-slate-700 bg-mentisCard p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-semibold text-white">{career.title}</h3>
-                  <button onClick={() => setOpenCareer(career.id)} className={`rounded-lg px-3 py-1 text-xs ${openCareer === career.id ? "bg-mentisPrimary text-white" : "border border-slate-700 text-mentisTextSecondary hover:text-white"}`}>Use for score</button>
+                  <button onClick={() => setOpenCareer(career.id)} className={`rounded-lg px-3 py-1 text-xs ${openCareer === career.id ? "bg-mentisPrimary text-white" : "border border-slate-700 text-mentisTextSecondary hover:text-mentisText"}`}>Use for score</button>
                 </div>
                 <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
                   <div className="rounded-lg bg-mentisBg/70 p-3"><p className="text-mentisTextSecondary">Fit Score</p><p className="font-semibold text-white">{career.fit}%</p></div>
@@ -351,9 +351,9 @@ export default function LandingPage() {
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-mentisTextSecondary md:flex-row md:items-center md:justify-between">
           <p>2026 MENTIS. AI Career Decision Intelligence System.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Contact</a>
+            <a href="#" className="hover:text-mentisText">Privacy</a>
+            <a href="#" className="hover:text-mentisText">Terms</a>
+            <a href="#" className="hover:text-mentisText">Contact</a>
           </div>
         </div>
       </footer>

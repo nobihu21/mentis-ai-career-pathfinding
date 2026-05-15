@@ -2,20 +2,36 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import VisualModeToggle from "../modes/VisualModeToggle";
 import { useAuth } from "../../contexts/AuthContext";
 
-const nav = [
-  { to: "/dashboard",  label: "Dashboard" },
-  { to: "/assessment", label: "Diagnose" },
-  { to: "/results",    label: "Match" },
-  { to: "/career/product-manager", label: "Validate" },
-  { to: "/roadmap",    label: "Act" },
-  { to: "/tracking",   label: "Track" },
-  { to: "/comparison", label: "Compare" },
-  { to: "/institution",label: "Institution" },
-];
+const navByRole = {
+  student: [
+    { to: "/dashboard/student", label: "Dashboard" },
+    { to: "/student/interests", label: "Interest Tracker" },
+    { to: "/student/careers", label: "Career Explorer" },
+    { to: "/student/profile", label: "Profile" },
+    { to: "/roadmap", label: "Roadmap" },
+    { to: "/tracking", label: "Progress" },
+  ],
+  parent: [
+    { to: "/dashboard/parent", label: "Dashboard" },
+    { to: "/parent/child-overview", label: "Child Overview" },
+    { to: "/parent/career-forecast", label: "Career Forecast" },
+    { to: "/parent/learning-progress", label: "Progress" },
+    { to: "/parent/reports", label: "Reports" },
+  ],
+  counselor: [
+    { to: "/dashboard/counselor", label: "Dashboard" },
+    { to: "/counselor/batch-overview", label: "Batch Overview" },
+    { to: "/counselor/roster", label: "Student Roster" },
+    { to: "/counselor/analytics", label: "Analytics" },
+    { to: "/counselor/interventions", label: "Interventions" },
+  ],
+};
 
 export default function ProductShell({ children, title, subtitle }) {
   const { user, profile, logout } = useAuth();
   const navigate = useNavigate();
+  const role = profile?.role || "student";
+  const nav = navByRole[role] || navByRole.student;
 
   async function handleLogout() {
     await logout();
@@ -34,7 +50,7 @@ export default function ProductShell({ children, title, subtitle }) {
           {/* User info */}
           {user && (
             <div className="mb-4 rounded-xl border border-slate-700 bg-mentisBg/60 px-3 py-2">
-              <p className="text-xs font-semibold text-white truncate">
+              <p className="text-xs font-semibold text-mentisText truncate">
                 {profile?.displayName || user.displayName || user.email}
               </p>
               <p className="text-xs text-mentisTextSecondary capitalize">
@@ -51,7 +67,7 @@ export default function ProductShell({ children, title, subtitle }) {
                 to={item.to}
                 className={({ isActive }) =>
                   `block rounded-lg px-3 py-2 text-sm transition ${
-                    isActive ? "bg-mentisPrimary/20 text-white" : "text-mentisTextSecondary hover:bg-white/5 hover:text-white"
+                    isActive ? "bg-mentisPrimary/20 text-mentisText" : "text-mentisTextSecondary hover:bg-white/5 hover:text-mentisText"
                   }`
                 }
               >
@@ -73,7 +89,7 @@ export default function ProductShell({ children, title, subtitle }) {
           <div className="mb-6 rounded-2xl border border-slate-700 bg-mentisCard/70 p-5">
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <h1 className="text-2xl font-bold text-mentisTextPrimary">{title}</h1>
+                <h1 className="text-2xl font-bold text-mentisText">{title}</h1>
                 <p className="mt-1 text-sm text-mentisTextSecondary">{subtitle}</p>
               </div>
               <VisualModeToggle />

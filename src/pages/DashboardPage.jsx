@@ -44,7 +44,7 @@ export default function DashboardPage() {
             </div>
             <div className="rounded-2xl border border-slate-700 bg-mentisCard p-5">
               <p className="text-sm text-mentisTextSecondary">Roadmap Progress</p>
-              <p className="mt-2 text-3xl font-bold text-white">
+              <p className="mt-2 text-3xl font-bold text-mentisText">
                 {stats?.progress ?? 0}%
               </p>
               <p className="mt-1 text-xs text-mentisTextSecondary">
@@ -53,7 +53,7 @@ export default function DashboardPage() {
             </div>
             <div className="rounded-2xl border border-slate-700 bg-mentisCard p-5">
               <p className="text-sm text-mentisTextSecondary">Top Career Match</p>
-              <p className="mt-2 text-xl font-semibold text-white">
+              <p className="mt-2 text-xl font-semibold text-mentisText">
                 {stats?.topCareerMatch ?? "—"}
               </p>
               {!stats?.hasAssessment && (
@@ -91,10 +91,10 @@ export default function DashboardPage() {
                     <Link to="/results" className="rounded-lg bg-mentisPrimary px-4 py-2 text-sm font-semibold text-white">
                       View Career Matches
                     </Link>
-                    <Link to="/roadmap" className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-mentisTextSecondary hover:text-white">
+                    <Link to="/roadmap" className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-mentisTextSecondary hover:text-mentisText">
                       Open 90-Day Roadmap
                     </Link>
-                    <Link to="/assessment" className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-mentisTextSecondary hover:text-white">
+                    <Link to="/assessment" className="rounded-lg border border-slate-700 px-4 py-2 text-sm text-mentisTextSecondary hover:text-mentisText">
                       Reassess
                     </Link>
                   </div>

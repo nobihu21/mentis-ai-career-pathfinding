@@ -117,7 +117,7 @@ export default function AssessmentPage() {
 
         {/* Question Card */}
         <div className="rounded-2xl border border-slate-700 bg-mentisCard p-8">
-          <h2 className="text-xl font-semibold text-white">{q.label}</h2>
+          <h2 className="text-xl font-semibold text-mentisText">{q.label}</h2>
 
           <div className="mt-6">
             {q.type === "range" ? (
@@ -144,8 +144,8 @@ export default function AssessmentPage() {
                     onClick={() => handleAnswer(q.key, opt.value)}
                     className={`w-full rounded-xl border px-5 py-3 text-left text-sm transition ${
                       answers[q.key] === opt.value
-                        ? "border-mentisPrimary bg-mentisPrimary/20 text-white"
-                        : "border-slate-700 bg-mentisBg/50 text-mentisTextSecondary hover:border-slate-500 hover:text-white"
+                        ? "border-mentisPrimary bg-mentisPrimary/20 text-mentisText"
+                        : "border-slate-700 bg-mentisBg/50 text-mentisTextSecondary hover:border-slate-500 hover:text-mentisText"
                     }`}
                   >
                     {opt.label}
@@ -165,7 +165,7 @@ export default function AssessmentPage() {
             {step > 0 && (
               <button
                 onClick={back}
-                className="rounded-xl border border-slate-700 px-5 py-2.5 text-sm text-mentisTextSecondary hover:text-white"
+                className="rounded-xl border border-slate-700 px-5 py-2.5 text-sm text-mentisTextSecondary hover:text-mentisText"
               >
                 ← Back
               </button>

@@ -12,14 +12,14 @@ export default function DecisionCard({ decision, onToggleReasoning, isOpen, acti
       <div className="mt-3 grid grid-cols-2 gap-3 text-xs">
         <div className="rounded-lg border border-slate-700 bg-mentisBg/50 p-3">
           <p className="text-mentisTextSecondary">Uncertainty</p>
-          <p className="font-semibold text-white">{decision.uncertaintyLevel}</p>
+          <p className="font-semibold text-mentisText">{decision.uncertaintyLevel}</p>
         </div>
         <div className="rounded-lg border border-slate-700 bg-mentisBg/50 p-3">
           <p className="text-mentisTextSecondary">Market Score</p>
-          <p className="font-semibold text-white">{decision.market.marketScore}%</p>
+          <p className="font-semibold text-mentisText">{decision.market.marketScore}%</p>
         </div>
       </div>
-      <button onClick={onToggleReasoning} className="mt-4 text-sm text-mentisSecondary hover:text-white">
+      <button onClick={onToggleReasoning} className="mt-4 text-sm text-mentisSecondary hover:text-mentisText">
         Why this match {isOpen ? "-" : "+"}
       </button>
       {isOpen ? (

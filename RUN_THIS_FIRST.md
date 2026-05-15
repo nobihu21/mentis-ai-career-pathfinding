@@ -52,3 +52,11 @@ If port 8000 is busy:
 netstat -ano | findstr :8000
 taskkill /PID <PID> /F
 ```
+.env
+backend/.env
+.env.localnode_modules
+.env
+.env.local
+backend/.env
+dist
+build

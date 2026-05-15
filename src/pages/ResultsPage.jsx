@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import DecisionCard from "../components/decision/DecisionCard";
 import ProductShell from "../components/layout/ProductShell";
 import { useAuth } from "../contexts/AuthContext";
-import { getCareerMatches } from "../services/firestore";
+import { studentApi } from "../services/backendApi";
+
 
 export default function ResultsPage() {
   const { user } = useAuth();
@@ -14,8 +15,21 @@ export default function ResultsPage() {
 
   useEffect(() => {
     if (!user) return;
-    getCareerMatches(user.uid).then((matches) => {
+
+    (async () => {
+      const token = user.getIdToken ? await user.getIdToken() : null;
+      if (!token) throw new Error("Missing auth token");
+      const matchesEnvelope = await studentApi.careerMatches(token, user.uid);
+      return matchesEnvelope;
+    })().then((res) => {
+
+      const matches = Array.isArray(res?.careers)
+        ? res.careers
+        : [];
+
+
       if (!matches || matches.length === 0) {
+
         setNoData(true);
       } else {
         setDecisions(matches);

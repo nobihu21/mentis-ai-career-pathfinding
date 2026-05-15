@@ -66,7 +66,7 @@ export default function TrackingPage() {
                   <p className="text-xs text-mentisTextSecondary">Tasks Completed</p>
                 </div>
                 <div className="rounded-xl bg-mentisBg/70 p-4">
-                  <p className="text-3xl font-bold text-white">{stats?.totalTasks ?? 0}</p>
+                  <p className="text-3xl font-bold text-mentisText">{stats?.totalTasks ?? 0}</p>
                   <p className="text-xs text-mentisTextSecondary">Total Tasks</p>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function TrackingPage() {
               <select
                 value={event}
                 onChange={(e) => setEvent(e.target.value)}
-                className="w-full rounded-lg border border-slate-700 bg-mentisBg px-3 py-2 text-sm text-white focus:border-mentisPrimary focus:outline-none"
+                className="w-full rounded-lg border border-slate-700 bg-mentisBg px-3 py-2 text-sm text-mentisText focus:border-mentisPrimary focus:outline-none"
               >
                 <option value="milestone">🏆 Milestone</option>
                 <option value="insight">💡 Insight</option>
@@ -94,7 +94,7 @@ export default function TrackingPage() {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder="Aaj kya hua? Koi decision liya? Kuch seekha?"
-                className="w-full resize-none rounded-lg border border-slate-700 bg-mentisBg px-3 py-2 text-sm text-white placeholder-slate-500 focus:border-mentisPrimary focus:outline-none"
+                className="w-full resize-none rounded-lg border border-slate-700 bg-mentisBg px-3 py-2 text-sm text-mentisText placeholder-slate-500 focus:border-mentisPrimary focus:outline-none"
               />
               <button
                 onClick={handleAddNote}
@@ -115,7 +115,7 @@ export default function TrackingPage() {
                       <span className="text-xs font-semibold text-mentisSecondary capitalize">{entry.event}</span>
                       <span className="text-xs text-mentisTextSecondary">{entry.date}</span>
                     </div>
-                    <p className="mt-1 text-sm text-white">{entry.note}</p>
+                    <p className="mt-1 text-sm text-mentisText">{entry.note}</p>
                   </div>
                 ))
               )}

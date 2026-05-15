@@ -5,14 +5,22 @@ export default {
     extend: {
       colors: {
         mentisBg: "#0f172a",
-        mentisCard: "#111827",
-        mentisPrimary: "#2563eb",
-        mentisSecondary: "#60a5fa",
-        mentisTextPrimary: "#f8fafc",
+        mentisCard: "#1e293b",
+        mentisPrimary: "#6366f1",
+        mentisSecondary: "#06b6d4",
+        // Preferred v2 token names (keep older aliases below for compatibility)
+        mentisText: "#f1f5f9",
         mentisTextSecondary: "#94a3b8",
+        // Back-compat aliases (do not remove; used across existing UI)
+        mentisTextPrimary: "#f1f5f9",
+        // Status colors
+        success: "#10b981",
+        warning: "#f59e0b",
+        error: "#ef4444",
+        info: "#3b82f6",
       },
       boxShadow: {
-        glow: "0 0 35px rgba(37, 99, 235, 0.35)",
+        glow: "0 0 35px rgba(99, 102, 241, 0.35)",
       },
     },
   },

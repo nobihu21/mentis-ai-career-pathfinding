@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Primary Colors */
+  --mentisPrimary: #6366f1;
+  --mentisSecondary: #06b6d4;
+
+  /* Backgrounds */
+  --mentisBg: #0f172a;
+  --mentisCard: #1e293b;
+
+  /* Text */
+  --mentisText: #f1f5f9;
+  --mentisTextSecondary: #94a3b8;
+
+  /* Status */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+}
+
 html,
 body,
 #root {
@@ -10,16 +30,19 @@ body,
 
 body {
   margin: 0;
-  background: #0f172a;
-  color: #ffffff;
+  background: var(--mentisBg);
+  color: var(--mentisText);
   font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .app-shell {
   background:
-    radial-gradient(circle at 15% -10%, rgba(59, 130, 246, 0.2), transparent 35%),
-    radial-gradient(circle at 95% 15%, rgba(96, 165, 250, 0.2), transparent 40%),
-    #0f172a;
+    radial-gradient(circle at 15% -10%, rgba(99, 102, 241, 0.22), transparent 35%),
+    radial-gradient(circle at 95% 15%, rgba(6, 182, 212, 0.18), transparent 40%),
+    var(--mentisBg);
 }
 
 body.mode-dimensional .rounded-2xl,
@@ -43,4 +66,54 @@ body.mode-immersive .rounded-xl {
 body.mode-immersive .rounded-2xl:hover,
 body.mode-immersive .rounded-xl:hover {
   transform: perspective(1200px) rotateX(4deg) rotateY(-2deg) translateY(-3px);
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes pulse-data {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .data-updating {
+    animation: pulse-data 2s ease-in-out infinite;
+  }
+
+  @keyframes fill-progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--width);
+    }
+  }
+
+  .progress-animated {
+    animation: fill-progress 0.8s ease-out;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .notification {
+    animation: slide-in 0.3s ease-out;
+  }
 }

@@ -5,7 +5,7 @@ export default function MetricBar({ label, value = 0, helper }) {
     <div>
       <div className="mb-1 flex items-center justify-between gap-3 text-sm">
         <span className="text-mentisTextSecondary">{label}</span>
-        <span className="font-semibold text-white">{safeValue}%</span>
+        <span className="font-semibold text-mentisText">{safeValue}%</span>
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-white/10">
         <div

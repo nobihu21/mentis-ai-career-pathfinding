@@ -59,17 +59,17 @@ export default function ComparisonPage() {
       <div className="mb-6 grid gap-4 md:grid-cols-3">
         <div className="rounded-xl border border-slate-700 bg-mentisCard p-4">
           <p className="text-xs uppercase tracking-wide text-mentisTextSecondary">Recommended</p>
-          <p className="mt-2 text-lg font-semibold text-white">{careerA.title}</p>
+          <p className="mt-2 text-lg font-semibold text-mentisText">{careerA.title}</p>
           <p className="mt-2 text-sm text-mentisTextSecondary">Higher fit and stronger demand — better risk-adjusted transition.</p>
         </div>
         <div className="rounded-xl border border-slate-700 bg-mentisCard p-4">
           <p className="text-xs uppercase tracking-wide text-mentisTextSecondary">Score Comparison</p>
-          <p className="mt-2 text-sm text-white">{careerA.title}: {careerA.confidenceScore}%</p>
-          <p className="mt-1 text-sm text-white">{careerB.title}: {careerB.confidenceScore}%</p>
+          <p className="mt-2 text-sm text-mentisText">{careerA.title}: {careerA.confidenceScore}%</p>
+          <p className="mt-1 text-sm text-mentisText">{careerB.title}: {careerB.confidenceScore}%</p>
         </div>
         <div className="rounded-xl border border-mentisPrimary/30 bg-mentisPrimary/10 p-4">
           <p className="text-xs uppercase tracking-wide text-mentisSecondary">Action Step</p>
-          <p className="mt-2 text-sm text-white">2-week validation sprint run karo phir final commitment lo.</p>
+          <p className="mt-2 text-sm text-mentisText">2-week validation sprint run karo phir final commitment lo.</p>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export default function ComparisonPage() {
               <tr key={metric} className="border-t border-slate-700/50 hover:bg-white/5">
                 <td className="px-4 py-3 text-mentisTextSecondary">{metric}</td>
                 <td className="px-4 py-3 font-semibold text-mentisSecondary">{valA}</td>
-                <td className="px-4 py-3 text-white">{valB}</td>
+                <td className="px-4 py-3 text-mentisText">{valB}</td>
               </tr>
             ))}
           </tbody>

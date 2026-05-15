@@ -16,7 +16,7 @@ export default function VisualModeToggle() {
           key={item.id}
           onClick={() => setMode(item.id)}
           className={`rounded-lg px-3 py-1 text-xs transition ${
-            mode === item.id ? "bg-mentisPrimary text-white" : "border border-slate-700 bg-mentisBg/80 text-mentisTextSecondary hover:text-white"
+            mode === item.id ? "bg-mentisPrimary text-white" : "border border-slate-700 bg-mentisBg/80 text-mentisTextSecondary hover:text-mentisText"
           }`}
         >
           {item.label}
